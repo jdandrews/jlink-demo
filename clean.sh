@@ -1,4 +1,3 @@
 #!/bin/zsh
-
-rm -r classes
+rm -rf classes
 rm -rf demoJre
