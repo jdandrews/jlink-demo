@@ -25,8 +25,8 @@ javac --module ${MODULE_NAME} --module-source-path ${MODULE_SRC} -d ${MODULE_CLA
 # the following runs the module code using the full JVM. Think of this like an integration test.
 
 echo
-echo "build: java --module-path ${MODULE_CLASSES} --module ${MODULE_NAME}/${MAIN}"
-java --module-path ${MODULE_CLASSES} --module ${MODULE_NAME}/${MAIN}
+echo "build: java --module-path ${MODULE_CLASSES} --module ${MODULE_NAME}/${MAIN} adding some numbers: 1 3 5 7 9"
+java --module-path ${MODULE_CLASSES} --module ${MODULE_NAME}/${MAIN} adding some numbers: 1 3 5 7 9
 
 # jlink won't overwrite, so let's make sure the output directory doesn't exist
 rm -rf ${SMALLER_JRE} > /dev/null 2>&1
@@ -46,5 +46,5 @@ cat ${SMALLER_JRE}/bin/${LAUNCHER}
 # and run the final jlink result. You could move this ${SMALLER_JRE} directory anywhere and this command would still work.
 
 echo
-echo "build: ${SMALLER_JRE}/bin/${LAUNCHER}"
-${SMALLER_JRE}/bin/${LAUNCHER}
+echo "build: ${SMALLER_JRE}/bin/${LAUNCHER} adding different numbers: 8 13 5 -17 12"
+${SMALLER_JRE}/bin/${LAUNCHER} adding different numbers: 8 13 5 -17 12
